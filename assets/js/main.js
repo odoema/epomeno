@@ -57,10 +57,12 @@
       const cur = slides[i], next = slides[n];
       cur.classList.add('is-leaving'); cur.classList.remove('is-active');
       next.classList.add('is-entering');
+      void next.offsetWidth; // commit the pre-hidden text state, then reveal it
+      requestAnimationFrame(() => next.classList.add('go'));
       next.removeAttribute('aria-hidden'); cur.setAttribute('aria-hidden', 'true');
       setDots(n);
       const done = () => {
-        next.classList.remove('is-entering'); next.classList.add('is-active');
+        next.classList.remove('is-entering', 'go'); next.classList.add('is-active');
         cur.classList.remove('is-leaving');
         busy = false;
       };
@@ -94,7 +96,7 @@
     window.addEventListener('load', () => $$('img[data-src]', hero).forEach(img => { img.src = img.dataset.src; }));
 
     slides.forEach((s, k) => { if (k) s.setAttribute('aria-hidden', 'true'); });
-    slides[0].classList.add('is-active');
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === 0));
     setDots(0);
     schedule();
   }
