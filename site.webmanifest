@@ -1,0 +1,20 @@
+{
+  "name": "Epomeno Investment Ltd",
+  "short_name": "Epomeno",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#01307E",
+  "theme_color": "#01307E",
+  "icons": [
+    {
+      "src": "assets/img/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
