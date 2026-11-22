@@ -295,7 +295,8 @@ p{ margin:0 0 1em; max-width:68ch; }
 .division .more{ display:inline-flex; align-items:center; gap:.5rem; font-weight:750; color:var(--gold); }
 .division .more svg{ width:18px; height:18px; transition:transform .4s var(--ease); }
 .division:hover .more svg{ transform:translateX(6px); }
-@media (max-width: 860px){ .divisions{ grid-template-columns:1fr; } .division{ min-height:440px; } }
+@media (max-width: 860px){ .divisions{ grid-template-columns:1fr; } .division{ min-height:440px; }
+  .division::before, .division:nth-child(2)::before{ background:linear-gradient(0deg, rgba(1,31,85,.97) 0%, rgba(1,31,85,.9) 60%, rgba(1,31,85,.55) 100%); } }
 
 /* service list (not cards) */
 .service-list{ border-top:2px solid var(--ink); }
